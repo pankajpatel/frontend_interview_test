@@ -10,38 +10,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/vendor.css">
-
-    <script src="js/vendor.js"></script>
-
 </head>
 
 <body>
 
 <div class="container container-form" ng-controller="TestCtrl">
+    <h1 class="text-center">Address</h1>
     <form>
         <div class="form-group">
             <label class="primary-label" for="inputText1">Street</label>
             <div class="field-area">
-                <input type="text" class="form-control" id="inputText1" placeholder="Street" ng-model="street">
+                <!-- Input .form-control can have has-error class also to notify error; and similar can be created for warnings also -->
+                <input type="text" class="form-control" id="street" placeholder="Street" ng-model="street">
             </div>
         </div>
         <div class="form-group">
             <label class="primary-label" for="inputText2">House Number</label>
             <div class="field-area">
-                <input type="text" class="form-control" id="inputText2" placeholder="House Number" ng-model="housenumber">
+                <input type="text" class="form-control" id="house" placeholder="House Number" ng-model="housenumber">
             </div>
         </div>
         <div class="form-group">
             <label class="primary-label" for="inputText3">Postal Code</label>
             <div class="field-area">
-                <input type="text" class="form-control" id="inputText3" placeholder="Postal Code" ng-model="postalcode">
+                <input type="text" class="form-control" id="postalCode" placeholder="Postal Code" ng-model="postalcode">
             </div>
         </div>
         <div class="form-group">
             <label class="primary-label" for="inputText4">City</label>
             <div class="field-area">
-                <input type="text" class="form-control" id="inputText4" placeholder="City" ng-model="city">
+                <input type="text" class="form-control" id="city" placeholder="City" ng-model="city">
             </div>
         </div>
         <div class="form-group">
@@ -75,13 +73,33 @@
         </div>
         <div class="form-group">
             <div class="field-area pull-right">
-                <button type="submit" class="btn btn-default btn-themed">Submit</button>
+                <button type="submit" id="locate" class="btn btn-default btn-themed">Submit</button>
+                <p class="error"></p>
             </div>
         </div>
     </form>
 </div>
 
-<script src="js/angular.js"></script>
+<div class="modal fade" tabindex="-1" role="dialog" id="location">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Location</h4>
+      </div>
+      <div class="modal-body">
+        <p>The coordinates for this address are: <span id="lat">00</span>, <span id="lng">00</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Including  jquery and bootstrap js from CDN, vendor.js was not getting generated -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
 
 </body>

@@ -32,8 +32,8 @@ body{
 		box-shadow: none;
 		font-size: 1em;
 		padding: 10px;
-		.has-error{
-			border: 1px solid $danger
+		&.has-error{
+			border: 1px solid $danger;
 		}
 	}
 
@@ -97,6 +97,10 @@ body{
 			color: $active;
 
 		}
+	}
+	.error{
+		color: $danger;
+		display: none;
 	}
 	//Name could be better, -themed is just for this case
 	.btn-themed{
