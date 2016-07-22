@@ -18,36 +18,66 @@
 
 <body>
 
-<div class="container" ng-controller="TestCtrl">
+<div class="container container-form" ng-controller="TestCtrl">
     <form>
         <div class="form-group">
-            <label for="inputText1">Street</label>
-            <input type="text" class="form-control" id="inputText1" placeholder="Street" ng-model="street">
+            <label class="primary-label" for="inputText1">Street</label>
+            <div class="field-area">
+                <input type="text" class="form-control" id="inputText1" placeholder="Street" ng-model="street">
+            </div>
         </div>
         <div class="form-group">
-            <label for="inputText2">House Number</label>
-            <input type="text" class="form-control" id="inputText2" placeholder="House Number" ng-model="housenumber">
+            <label class="primary-label" for="inputText2">House Number</label>
+            <div class="field-area">
+                <input type="text" class="form-control" id="inputText2" placeholder="House Number" ng-model="housenumber">
+            </div>
         </div>
         <div class="form-group">
-            <label for="inputText3">Postal Code</label>
-            <input type="text" class="form-control" id="inputText3" placeholder="Postal Code" ng-model="postalcode">
+            <label class="primary-label" for="inputText3">Postal Code</label>
+            <div class="field-area">
+                <input type="text" class="form-control" id="inputText3" placeholder="Postal Code" ng-model="postalcode">
+            </div>
         </div>
         <div class="form-group">
-            <label for="inputText4">City</label>
-            <input type="text" class="form-control" id="inputText4" placeholder="City" ng-model="city">
+            <label class="primary-label" for="inputText4">City</label>
+            <div class="field-area">
+                <input type="text" class="form-control" id="inputText4" placeholder="City" ng-model="city">
+            </div>
         </div>
         <div class="form-group">
-            <label for="radio1">Radio1</label>
-            <input type="radio" id="radio1" name="radio" ng-model="radio" value="1">
+            <label class="primary-label">Radios</label>
+            <div class="field-area">
+                <div class="radio-group">
+                    <div class="radio-button active">
+                        <label for="radio1">Radio1</label>
+                        <input type="radio" id="radio1" name="radio" checked ng-model="radio" value="1">
+                    </div>
 
-            <label for="radio2">Radio2</label>
-            <input type="radio" id="radio2" name="radio" ng-model="radio" value="2">
+                    <div class="radio-button">
+                        <label for="radio2">Radio2</label>
+                        <input type="radio" id="radio2" name="radio" ng-model="radio" value="2">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="form-group">
-            <label for="check1">Check1</label>
-            <input type="checkbox" id="check1" ng-model="check">
+            <label class="primary-label" for="check1">Hobbies</label>
+            <div class="field-area">
+                <div class="checkbox-button">
+                    <label for="check1">Hobby1</label>
+                    <input type="checkbox" id="check1" ng-model="check">
+                </div>
+                <div class="checkbox-button active">
+                    <label for="check2">Hobby2</label>
+                    <input type="checkbox" id="check2" checked ng-model="check">
+                </div>
+            </div>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <div class="form-group">
+            <div class="field-area pull-right">
+                <button type="submit" class="btn btn-default btn-themed">Submit</button>
+            </div>
+        </div>
     </form>
 </div>
 

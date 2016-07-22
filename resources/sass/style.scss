@@ -1,2 +1,120 @@
 @import "style/mixins";
 @import "style/variables";
+@import "../css/bootstrap.min";
+
+body{
+	background: $background;
+	font-size: 16px;
+}
+
+.container-form{
+	.form-group{
+		padding: 20px 0;
+	}
+
+	.primary-label,
+	.field-area{
+		width: 50%;
+		display: block;
+		float: left;
+	}
+
+	.primary-label{
+		text-align: right;
+		box-sizing: border-box;
+		padding-right: 30px;
+		line-height: 30px;
+	}
+
+	.field-area .form-control{
+		border: 1px solid transparent;
+		border-radius: 2px;
+		box-shadow: none;
+		font-size: 1em;
+		padding: 10px;
+		.has-error{
+			border: 1px solid $danger
+		}
+	}
+
+	.radio-button,
+	.checkbox-button{
+		display: inline-block;
+		position: relative;
+		padding-left: 40px;
+		margin-right: 20px;
+
+		[type="radio"],
+		[type="checkbox"]{
+			-apple-appearance: none;
+			-webkit-appearance: none;
+			appearance: none;
+			position: absolute;
+			left: 5px;
+			top: 5px;
+			z-index: 1;
+		}
+		& > label {
+			line-height: 30px;
+		}
+		&:before{
+			display: block;
+			content: '';
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			border-radius: 50%;
+			top: 0;
+			left: 0;
+			background: $white;
+			z-index: 10;
+		}
+
+		&.active:after{
+			display: block;
+			content: '';
+			width: 14px;
+			height: 14px;
+			margin: 8px;
+			position: absolute;
+			border-radius: 50%;
+			top: 0;
+			left: 0;
+			background: $active;
+			z-index: 11;
+		}
+	}
+	.checkbox-button{
+		&:before{
+			border-radius: 3px;
+		}
+		&.active:after{
+			background: transparent;
+			content: "\e013";
+			font-family: 'Glyphicons Halflings';
+			font-size: 13px;
+			margin: 6px 8px;
+			color: $active;
+
+		}
+	}
+	//Name could be better, -themed is just for this case
+	.btn-themed{
+		border: 0px;
+		background: $active;
+		color: $white;
+		display: block;
+		width: 100%;
+		font-size: 1.4em;
+		text-transform: uppercase;
+		font-weight: bold;
+		border-bottom: 4px solid $activeDarker;
+		border-radius: 2px;
+
+		&:active{
+			background: $activeDarker;
+			border-bottom: 4px solid $active;
+			color: $white;
+		}
+	}
+}
